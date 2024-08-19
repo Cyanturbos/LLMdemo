@@ -29,4 +29,4 @@ async def on_message(message: cl.Message):
     await cl.Message(content=response.choices[0].message.content).send()
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)
+    cl.run(host="0.0.0.0", port=8080)
