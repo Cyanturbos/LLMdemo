@@ -1,6 +1,8 @@
 from openai import AsyncOpenAI
 import chainlit as cl
-client = AsyncOpenAI()
+#client = AsyncOpenAI()
+client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
 
 # Instrument the OpenAI client
 cl.instrument_openai()
