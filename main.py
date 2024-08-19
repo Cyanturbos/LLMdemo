@@ -1,7 +1,18 @@
 from openai import AsyncOpenAI
 import chainlit as cl
 #client = AsyncOpenAI()
-client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = AsyncOpenAI(
+    openai_api_key=None,        # OpenAI API 密钥（默认从环境变量读取）
+    temperature=1,              # 生成文本的随机性，默认是 1
+    model_name="gpt-4o-mini", # 使用的模型名称，默认是 "gpt-3.5-turbo"
+    max_tokens=256,             # 最大 token 长度，默认是 256
+    top_p=1,                    # 对生成结果的筛选程度，默认是 1
+    frequency_penalty=0,        # 控制重复用词的程度，默认是 0
+    presence_penalty=0,         # 控制话题新颖性的程度，默认是 0
+    request_timeout=60,         # 请求超时时间，默认是 60 秒
+    logit_bias=None,            # 控制特定词语的生成概率，默认是 None
+    n=1                         # 生成的文本数量，默认是 1
+)
 
 
 # Instrument the OpenAI client
