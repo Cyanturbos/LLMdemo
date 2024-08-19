@@ -8,7 +8,7 @@ client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 cl.instrument_openai()
 
 settings = {
-    "model": "gpt-3.5-turbo",
+    "model": "gpt-4o-mini",
     "temperature": 0,
     # ... more settings
 }
